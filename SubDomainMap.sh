@@ -19,15 +19,15 @@ else
         
         echo -ne "VERIFICANDO $count de $total_lines_txt\r"
         
-        if host="$(host ${subdominio//[$'\t\r\n']}.pacificsec.com)"; then
-            echo "Subdomain: ${subdominio//[$'\t\r\n']}.pacificsec.com" >> validSubdomainsList.txt
+        if host="$(host ${subdominio//[$'\t\r\n']}.${domain//[$'\t\r\n']})"; then
+            echo "Subdomain: ${subdominio//[$'\t\r\n']}.${domain//[$'\t\r\n']}" >> validSubdomainsList.txt
             echo "$host" >> validSubdomainsList.txt
             echo "------------" >> validSubdomainsList.txt
         fi
         
         count=$(expr $count + 1)
 
-        #sleep 1
+        sleep 1
     done
 fi
 
